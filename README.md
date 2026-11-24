@@ -8,7 +8,7 @@ Renewal Desk is an independent product initiative I started to help teams manage
 
 **Live showcase:** [Open Renewal Desk](https://ajazz-git.github.io/renewal-desk-showcase/)  
 **Product status:** Working product · Active development  
-**Hosting:** Vercel static deployment  
+**Hosting:** GitHub Pages  
 **Application source:** Private
 
 ## Why Renewal Desk?
