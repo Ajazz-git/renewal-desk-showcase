@@ -1,28 +1,29 @@
 # Deployment
 
-## Preferred hosting: GitHub Pages
+## Hosting choice: GitHub Pages
 
-This repository is a static HTML site, so GitHub Pages is the simplest fit. No framework build step or external deployment platform is needed.
+GitHub Pages is the preferred host for this project. The showcase is a static HTML/CSS/JavaScript site with image assets. It does not need a server runtime or a framework build step.
 
-One-time repository setting (requires repository admin/maintainer access):
+**Expected URL:** https://ajazz-git.github.io/renewal-desk-showcase/
 
-1. Open **Settings → Pages** in this repository.
-2. Under **Build and deployment**, choose **Deploy from a branch**.
-3. Select branch **main** and folder **/(root)**.
-4. Save.
+### One-time repository setting
 
-GitHub Pages will serve the `index.html` and assets from the repository root and publish future pushes from that source.
+A repository administrator needs to enable the Pages publishing source:
 
-**Expected site URL:** https://ajazz-git.github.io/renewal-desk-showcase/
+1. Open [Repository Pages settings](https://github.com/Ajazz-git/renewal-desk-showcase/settings/pages).
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+3. Save if prompted.
 
-The repository is public, which is eligible for GitHub Pages on GitHub Free. GitHub's documentation recommends branch publishing when no custom build process is needed.
+The workflow at `.github/workflows/pages.yml` will then publish the site and deploy future pushes to `main` automatically. No custom token or secret is required for the normal deployment workflow.
 
-## Vercel fallback deployment
+### Why the first attempt failed
 
-A one-time static Vercel deployment was created during setup troubleshooting. It is not the preferred/canonical hosting target and is not connected to the private Renewal Desk application repository.
+The first workflow run tried to create the GitHub Pages site automatically by setting `enablement: true` on `actions/configure-pages`. That option requires a token with repository administration and Pages permissions. The standard Actions `GITHUB_TOKEN` does not have the administration permission needed to create the Pages site, so GitHub returned **Resource not accessible by integration**.
 
-- Vercel project: `renewal-desk-showcase`
-- Vercel URL: https://renewal-desk-showcase.vercel.app/
-- GitHub automatic deployment: not connected.
+The workflow now uses the normal GitHub Pages setup and does not try to enable the site through the workflow token. The repository's Pages source must be selected once in Settings by an administrator.
 
-Once GitHub Pages is confirmed live, the Vercel fallback can be removed to avoid maintaining two hosting locations.
+## Temporary Vercel fallback
+
+A one-time static deployment was created while troubleshooting, at https://renewal-desk-showcase.vercel.app/. It is not the preferred hosting target, is not linked to the private application repository, and is not required for the GitHub Pages setup.
+
+Once GitHub Pages is confirmed live, the Vercel fallback can be removed to avoid duplicate hosting.
