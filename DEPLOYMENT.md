@@ -1,29 +1,25 @@
 # Deployment
 
-## Hosting choice: GitHub Pages
+## Hosting: GitHub Pages
 
-GitHub Pages is the preferred host for this project. The showcase is a static HTML/CSS/JavaScript site with image assets. It does not need a server runtime or a framework build step.
+Renewal Desk Showcase is a static HTML, CSS and JavaScript website. GitHub Pages is the primary host; a separate application server or framework build step is not required.
 
-**Expected URL:** https://ajazz-git.github.io/renewal-desk-showcase/
+**Live URL:** https://ajazz-git.github.io/renewal-desk-showcase/
 
-### One-time repository setting
+The GitHub Pages deployment completed successfully for the repository's `main` branch on **24 November 2026**. The successful run was GitHub's `pages build and deployment` workflow, and its deployment log reported the live URL above.
 
-A repository administrator needs to enable the Pages publishing source:
+### Publishing source
 
-1. Open [Repository Pages settings](https://github.com/Ajazz-git/renewal-desk-showcase/settings/pages).
-2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
-3. Save if prompted.
+The repository is published from the `main` branch at the repository root. GitHub Pages builds and deploys that content when the selected branch source is updated.
 
-The workflow at `.github/workflows/pages.yml` will then publish the site and deploy future pushes to `main` automatically. No custom token or secret is required for the normal deployment workflow.
+To review the setting, open [Repository Pages settings](https://github.com/Ajazz-git/renewal-desk-showcase/settings/pages). The publishing source should be **Deploy from a branch**, with branch `main` and folder `/(root)`.
 
-### Why the first attempt failed
+### Workflow cleanup
 
-The first workflow run tried to create the GitHub Pages site automatically by setting `enablement: true` on `actions/configure-pages`. That option requires a token with repository administration and Pages permissions. The standard Actions `GITHUB_TOKEN` does not have the administration permission needed to create the Pages site, so GitHub returned **Resource not accessible by integration**.
-
-The workflow now uses the normal GitHub Pages setup and does not try to enable the site through the workflow token. The repository's Pages source must be selected once in Settings by an administrator.
+The temporary custom Actions workflow was removed because GitHub Pages' branch-based publishing already handles deployment. This avoids running a second, unnecessary deployment workflow.
 
 ## Temporary Vercel fallback
 
-A one-time static deployment was created while troubleshooting, at https://renewal-desk-showcase.vercel.app/. It is not the preferred hosting target, is not linked to the private application repository, and is not required for the GitHub Pages setup.
+A one-time static deployment was created during troubleshooting at https://renewal-desk-showcase.vercel.app/. It is not the primary site and is not connected to the private Renewal Desk application repository.
 
-Once GitHub Pages is confirmed live, the Vercel fallback can be removed to avoid duplicate hosting.
+GitHub Pages is the canonical showcase URL. The Vercel fallback can be retired separately after confirming the Pages site is accessible.
