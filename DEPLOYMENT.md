@@ -1,24 +1,28 @@
 # Deployment
 
-## Current live site
+## Preferred hosting: GitHub Pages
 
-- **URL:** https://renewal-desk-showcase.vercel.app/
-- **Hosting project:** `renewal-desk-showcase`
-- **Source repository:** `Ajazz-git/renewal-desk-showcase`
-- **Published branch snapshot:** `main`
-- **Mode:** Static file deployment
+This repository is a static HTML site, so GitHub Pages is the simplest fit. No framework build step or external deployment platform is needed.
 
-The current production site was published directly from the public repository files. The private Renewal Desk application repository was not connected or deployed.
+One-time repository setting (requires repository admin/maintainer access):
 
-## Automatic deployments
+1. Open **Settings → Pages** in this repository.
+2. Under **Build and deployment**, choose **Deploy from a branch**.
+3. Select branch **main** and folder **/(root)**.
+4. Save.
 
-Git-based automatic deployments are not connected yet. Vercel reported that a GitHub Login Connection must be added to the Vercel account before the repository can be linked.
+GitHub Pages will serve the `index.html` and assets from the repository root and publish future pushes from that source.
 
-To enable automatic updates:
+**Expected site URL:** https://ajazz-git.github.io/renewal-desk-showcase/
 
-1. In Vercel, add or authorize the GitHub Login Connection for the account.
-2. Connect `Ajazz-git/renewal-desk-showcase` to the existing `renewal-desk-showcase` Vercel project.
-3. Set `main` as the production branch and confirm the root directory is the repository root.
-4. Push a small reviewed change and verify that Vercel creates a production deployment.
+The repository is public, which is eligible for GitHub Pages on GitHub Free. GitHub's documentation recommends branch publishing when no custom build process is needed.
 
-Until then, changes pushed to GitHub will not automatically update the live site. Redeploy the static files manually after reviewing changes.
+## Vercel fallback deployment
+
+A one-time static Vercel deployment was created during setup troubleshooting. It is not the preferred/canonical hosting target and is not connected to the private Renewal Desk application repository.
+
+- Vercel project: `renewal-desk-showcase`
+- Vercel URL: https://renewal-desk-showcase.vercel.app/
+- GitHub automatic deployment: not connected.
+
+Once GitHub Pages is confirmed live, the Vercel fallback can be removed to avoid maintaining two hosting locations.
