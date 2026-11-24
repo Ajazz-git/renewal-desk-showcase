@@ -26,11 +26,13 @@
 - [ ] Inspect the site on desktop and mobile.
 - [ ] Verify screenshot loading, text, links and metadata.
 - [ ] Check the public repository from a logged-out browser.
+- [ ] Connect the GitHub repository to Vercel for automatic deployments on pushes to `main`.
 - [ ] Update the main portfolio and resume only when the showcase is ready.
 
 ## Current status
 
-- Static public showcase: being prepared.
+- Static public showcase: published at https://renewal-desk-showcase.vercel.app/ (one-time deployment).
 - Product application source: private.
 - Hosted interactive demo: not published.
+- Git-based automatic deployment: not connected; requires a Vercel GitHub Login Connection.
 - Employment/IP review: outstanding.
