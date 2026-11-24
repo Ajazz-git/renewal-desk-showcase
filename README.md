@@ -6,8 +6,9 @@
 
 Renewal Desk is an independent product initiative I started to help teams manage the lifecycle of software licences and recurring subscriptions. It aims to make the decision behind each renewal visible: who needs to respond, what the organisation has decided, and how much time remains to act before a cancellation or change deadline.
 
-**Product showcase:** [Open the website](https://renewal-desk-showcase-ajasm397-7013.vercel.app/)  
+**Live showcase:** [Open Renewal Desk](https://renewal-desk-showcase.vercel.app/)  
 **Product status:** Working product · Active development  
+**Hosting:** Vercel static deployment  
 **Application source:** Private
 
 ## Why Renewal Desk?
@@ -65,7 +66,7 @@ A public interactive application demo is not linked here yet. It will be publish
 
 ## Links
 
-- [Product website](https://renewal-desk-showcase-ajasm397-7013.vercel.app/)
+- [Product website](https://renewal-desk-showcase.vercel.app/)
 - [Portfolio](https://ajasmhd.in/)
 - [Contact](https://ajasmhd.in/#contact)
 
